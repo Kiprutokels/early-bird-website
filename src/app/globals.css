@@ -1,26 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Brand Colors */
+  --color-brand-50: #FFF4E6;
+  --color-brand-100: #FFE9CC;
+  --color-brand-200: #FFD399;
+  --color-brand-300: #FFBD66;
+  --color-brand-400: #FFA733;
+  --color-brand-500: #FF9933;
+  --color-brand-600: #E68A2E;
+  --color-brand-700: #CC7A29;
+  --color-brand-800: #B36B24;
+  --color-brand-900: #99591F;
+
+  /* Blue palette */
+  --color-blue-50: #E6F3FF;
+  --color-blue-100: #CCE7FF;
+  --color-blue-200: #99CFFF;
+  --color-blue-300: #66B7FF;
+  --color-blue-400: #339FFF;
+  --color-blue-500: #3399CC;
+  --color-blue-600: #2E8AB8;
+  --color-blue-700: #297BA3;
+  --color-blue-800: #246C8F;
+  --color-blue-900: #1F5D7A;
+
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Poppins', system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .btn-primary {
+    @apply bg-brand-500 hover:bg-brand-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+
+  .btn-outline {
+    @apply border-2 border-brand-500 text-brand-500 hover:bg-brand-500 hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 transform hover:scale-105 hover:shadow-2xl;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-br from-blue-500 via-brand-500 to-blue-600;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-500 to-blue-500 bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
 }
