@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/Button';
-import { COMPANY_INFO } from '@/lib/constants';
 import Slider from 'react-slick';
 import {
   Briefcase,
@@ -95,17 +94,22 @@ export const Hero: React.FC = () => {
             <Slider {...sliderSettings}>
               {services.map((service, index) => (
                 <div key={index} className="px-4">
-                  <div className="bg-white/10 p-6 rounded-2xl shadow-lg text-center hover:bg-white/20 transition">
-                    {service.icon}
-                    <h3 className="text-xl font-semibold mb-2">
+                  <div className="bg-white/95 p-8 rounded-2xl shadow-xl text-center transition hover:-translate-y-2 hover:shadow-2xl">
+                    <div className="flex justify-center mb-4">
+                      <div className="w-16 h-16 flex items-center justify-center rounded-full bg-brand-100 text-brand-600 dark:bg-brand-500/20 dark:text-brand-400 shadow-md">
+                        {service.icon}
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2 text-gray-900 ">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-white/80">{service.desc}</p>
+                    <p className="text-sm text-gray-600 ">{service.desc}</p>
                   </div>
                 </div>
               ))}
             </Slider>
           </div>
+
         </div>
       </div>
 
