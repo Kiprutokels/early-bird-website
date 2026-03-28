@@ -3,26 +3,44 @@ export interface NavigationItem {
   href: string;
 }
 
-export interface Service {
+export interface Programme {
   id: number;
   title: string;
+  ageRange: string;
   description: string;
   icon: string;
   features: string[];
+  color: string;
 }
 
 export interface Testimonial {
   id: number;
   name: string;
-  position: string;
-  company: string;
+  role: string;
   content: string;
-  avatar?: string;
+  rating: number;
+  initials: string;
+}
+
+export interface SchoolValue {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface GalleryImage {
+  id: number;
+  src: string;
+  alt: string;
+  category: string;
 }
 
 export interface ContactFormData {
-  name: string;
+  parentName: string;
   email: string;
-  company?: string;
+  phone: string;
+  childName: string;
+  childAge: string;
+  programme: string;
   message: string;
 }
