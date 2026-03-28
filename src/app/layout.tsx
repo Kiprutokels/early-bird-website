@@ -1,14 +1,31 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
+});
 
 export const metadata: Metadata = {
-  title: "Fortune Technologies - Empowering Your Digital Future",
-  description: "Leading HR solutions and ICT consultancy services that transform businesses and accelerate growth in the digital age.",
-  keywords: "HR solutions, ICT consultancy, digital transformation, business intelligence",
+  title: "Early Bird Academy — In God We Excel | Pre-Primary, Primary & JSS",
+  description:
+    "Early Bird Academy is a leading Pre-Primary, Primary, and Junior Secondary School dedicated to academic excellence, moral values, and holistic child development. In God We Excel.",
+  keywords:
+    "Early Bird Academy, school, pre-primary, primary school, junior secondary, JSS, education, Nigeria, nursery, kindergarten, admissions",
+  openGraph: {
+    title: "Early Bird Academy — In God We Excel",
+    description:
+      "Nurturing Young Minds, Building Bright Futures. Pre-Primary, Primary & Junior Secondary School.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -17,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <body className={inter.className}>
         <Header />
         <main>{children}</main>
