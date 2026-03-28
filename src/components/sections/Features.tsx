@@ -43,13 +43,6 @@ export const Features: React.FC = () => {
       color: 'bg-gold-100 text-gold-600',
     },
     {
-      icon: Shield,
-      title: 'Safe & Secure Campus',
-      description:
-        'Fully fenced and gated premises with CCTV surveillance, trained security personnel, and controlled access for peace of mind.',
-      color: 'bg-blue-100 text-blue-600',
-    },
-    {
       icon: Bus,
       title: 'School Transportation',
       description:
